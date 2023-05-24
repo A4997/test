@@ -849,12 +849,19 @@ input {
       margin-bottom: 5px;
     }
   }
+  .responsive{
+    .slick-slide{
+      margin-left: 220px !important;
+      margin-top: 10px;
+    }
+  }
+  
 }
 @media only screen and (min-width: 550px) {
   .header {
     display: block;
   }
-  .headerResponsive {
+  .headerResponsive { 
     display: none;
   }
   .homeImageContainer img {
