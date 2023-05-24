@@ -19,8 +19,7 @@
 | position        | Int        | Sorting number start from zero                                   |
 | limit           | Int        | Number of products to be shown
 #}
-{% set is_vertical = theme.settings.get('vertical_fixed_products', true) %}
-<section class="s-block container-fluid ">
+<section id="best-offers-{{ position }}-slider" class="s-block s-block--best-offers container overflow-hidden">
 
 	<div class="categories mt-3 mb-3">
 		<h4 class="row mr-2">الاقسام</h4>
