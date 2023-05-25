@@ -10,34 +10,31 @@
 {% set is_vertical = theme.settings.get('vertical_fixed_products', true) %}
 <section class="s-block container-fluid ">
 
-	<div class="categories mt-3 mb-3">
-		<h4 class="row mr-2">الاقسام</h4>
-		<nav class="nav subCategories mb-5">
-			<a class="nav-link active checked" href="#">عطور</a>
-			<a class="nav-link unChecked" href="#">مكياج</a>
-			<a class="nav-link unChecked" href="#">كريم</a>
-		</nav>
-		{# {% if title %}
-						<div class="s-block__title">
-							<div class="right-side">
-								<h2>{{ title }}</h2>
-							</div>
-							{% if display_all_url %}
-								<a href="{{ display_all_url }}" class="s-block__display-all">{{ trans('blocks.home.display_all') }}
-									<i class="sicon-arrow-left"></i>
-								</a>
-							{% endif %}
-						</div>
-					{% endif %} #}
+	<div
+		class="categories mt-3 mb-3">
+		{# <h4 class="row mr-2">{{ title }}</h4> #}
+
+		{% if title %}
+			<div class="s-block__title">
+				<div class="right-side">
+					<h2>{{ title }}</h2>
+				</div>
+				{% if display_all_url %}
+					<a href="{{ display_all_url }}" class="s-block__display-all">{{ trans('blocks.home.display_all') }}
+						<i class="sicon-arrow-left"></i>
+					</a>
+				{% endif %}
+			</div>
+		{% endif %}
 
 		{# <salla-products-list
-						      source="selected"
-						      limit="{{ limit }}"
-						      source-value="[{{ products|map((product) => product.id)|join(',') }}]"
-						      class="{{is_vertical ? 'vertical-products' : 'horizontal-products'}}"
-						      {{is_vertical ? '' : 'horizontal-cards'}}
-						      >
-						    </salla-products-list> #}
+								      source="selected"
+								      limit="{{ limit }}"
+								      source-value="[{{ products|map((product) => product.id)|join(',') }}]"
+								      class="{{is_vertical ? 'vertical-products' : 'horizontal-products'}}"
+								      {{is_vertical ? '' : 'horizontal-cards'}}
+								      >
+								    </salla-products-list> #}
 		<div class="responsive">
 
 			{% for product in products %}
@@ -52,7 +49,9 @@
 							<div class="card-body">
 								<h5 class="card-title">عطر لا بانثير من كارتييه للنساء او دي بارفيوم</h5>
 								<div class="rating_and_discount row">
-									<div class="discount ">- {{product.discount_percentage|number_format }} %</div>
+									<div class="discount ">-
+										{{product.discount_percentage|number_format }}
+										%</div>
 									<div class="rating mr-5">
 										<i class="fa-solid fa-star-half-stroke"></i>4.5</div>
 								</div>

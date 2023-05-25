@@ -6129,7 +6129,6 @@ input {
   border-bottom: 1px #afafaf solid;
 }
 .checked {
-  border-bottom: 1px black solid;
   color: black;
 }
 .unChecked {
@@ -6559,6 +6558,11 @@ input {
 }
 .s-search-icon svg {
   fill: white;
+}
+.sliderHeader .s-button-primary {
+  background-color: transparent;
+  color: black;
+  border: none;
 }
 @media only screen and (min-width: 375px) {
   .modalToggleResponsive {

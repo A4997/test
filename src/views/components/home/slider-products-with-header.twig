@@ -9,86 +9,75 @@
 | position              | int                   | Sorting number start from zero                                               |
 #}
 <section class="s-block s-block--slider-with-bg s-block--full-bg">
-	<div class="slider-bg" style="background-image: url('{{ component.background }}');">
-		<div class="container pt-8 sm:pt-20 relative">
-			<div>
-				<h3 class="text-lg font-bold leading-12">
-					{{ component.title }}
-				</h3>
-				<p class="text-sm mb-8 line-clamp-2 max-w-lg">
-					{{ component.description }}
-				</p>
-			</div>
-		</div>
-	</div>
+    <div class="slider-bg" style="background-image: url('{{ component.background }}');">
+        <div class="container pt-8 sm:pt-20 relative">
+            <div>
+                <h3 class="text-lg font-bold leading-12">
+                    {{ component.title }}
+                </h3>
+                <p class="text-sm mb-8 line-clamp-2 max-w-lg">
+                    {{ component.description }}
+                </p>
+            </div>
+        </div>
+    </div>
 
-	<div
-		class="container -mt-62 relative overflow-hidden">
-		{# <salla-products-slider 
-		        source="selected"
-		        source-value="[{{ component.products|map((product) => product.id)|join(',') }}]" 
-		        display-all-url="{{component.display_all_url}}" 
-		        block-title=" " 
-		        slider-id="slider-with-bg-{{ position }}"
-		        ></salla-products-slider> #}
-		<div class="categories mt-3 mb-3">
-			<h4 class="row mr-2">الاقسام</h4>
-			<nav class="nav subCategories mb-5">
-				<a class="nav-link active checked" href="#">عطور</a>
-				<a class="nav-link unChecked" href="#">مكياج</a>
-				<a class="nav-link unChecked" href="#">كريم</a>
-			</nav>
+    <div class="container -mt-62 relative overflow-hidden">
+        {# <salla-products-slider 
+        source="selected"
+        source-value="[{{ component.products|map((product) => product.id)|join(',') }}]" 
+        display-all-url="{{component.display_all_url}}" 
+        block-title=" " 
+        slider-id="slider-with-bg-{{ position }}"
+        ></salla-products-slider> #}
+		<div class="responsive">
 
-			<div class="responsive">
-
-				{% for product in products %}
-					<div>
-						<a href="{{product.url}}" style="text-decoration:none; color:black">
-							<div class="card" style="">
-								{% for image in product.images %}
-									{% if loop.first %}
-										<div class="prodImage"><img src="{{image.url}}" class="card-img-top" alt="..."></div>
-									{% endif %}
-								{% endfor %}
-								<div class="card-body">
-									<h5 class="card-title">عطر لا بانثير من كارتييه للنساء او دي بارفيوم</h5>
-									<div class="rating_and_discount row">
-										<div class="discount ">-
-											{{product.discount_percentage|number_format }}
-											%</div>
-										<div class="rating mr-5">
-											<i class="fa-solid fa-star-half-stroke"></i>4.5</div>
-									</div>
-
+			{% for product in component.products %}
+				<div>
+					<a href="{{product.url}}" style="text-decoration:none; color:black">
+						<div class="card" style="">
+							{% for image in product.images %}
+								{% if loop.first %}
+									<div class="prodImage"><img src="{{image.url}}" class="card-img-top" alt="..."></div>
+								{% endif %}
+							{% endfor %}
+							<div class="card-body">
+								<h5 class="card-title">عطر لا بانثير من كارتييه للنساء او دي بارفيوم</h5>
+								<div class="rating_and_discount row">
+									<div class="discount ">- {{product.discount_percentage|number_format }} %</div>
+									<div class="rating mr-5">
+										<i class="fa-solid fa-star-half-stroke"></i>4.5</div>
 								</div>
 
-								<div class="row card-bottom">
-									<p class="first">
-										{{ product.price|money }}
-										<span class="middle mr-2">
-											{{ product.regular_price|money }}</span>
-									</p>
+							</div>
 
-									<div class="cartHome">
-										<i class="fas fa-shopping-cart"></i>
-									</div>
+							<div class="row card-bottom">
+								<p class="first">
+									{{ product.price|money }}
+									<span class="middle mr-2">
+										{{ product.regular_price|money }}</span>
+								</p>
 
+								<div class="cartHome">
+									<i class="fas fa-shopping-cart"></i>
 								</div>
 
-								<div class="container topBadge" style="">
-									<div class="row" style="justify-content: space-evenly" id="newInfo">
-										<div class="newBadge ml-5 ">جديد</div>
-										<div class="favourite mr-5">
-											<i class="fa-regular fa-heart"></i>
-										</div>
+							</div>
+
+							<div class="container topBadge" style="">
+								<div class="row" style="justify-content: space-evenly" id="newInfo">
+									<div class="newBadge ml-5 ">جديد</div>
+									<div class="favourite mr-5">
+										<i class="fa-regular fa-heart"></i>
 									</div>
 								</div>
 							</div>
-						</a>
-					</div>
+						</div>
+					</a>
+				</div>
 
-				{% endfor %}
-			</div>
+			{% endfor %}
 		</div>
-	</div>
+    </div>
 </section>
+ 

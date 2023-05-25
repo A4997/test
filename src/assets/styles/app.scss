@@ -242,7 +242,7 @@ input {
   border-bottom: 1px #afafaf solid;
 }
 .checked {
-  border-bottom: 1px black solid;
+  // border-bottom: 1px black solid;
   color: black;
 }
 .unChecked {
@@ -668,6 +668,13 @@ input {
 .s-search-icon svg{
   fill: white;
 }
+.sliderHeader{
+  .s-button-primary{
+    background-color: transparent ;
+    color: black;
+    border: none;
+  }
+}
 @media only screen and (min-width: 375px) {
   .modalToggleResponsive {
     border-top: 3px solid #0a0a0a;
@@ -955,4 +962,10 @@ input {
     margin-left: 50px;
     margin-bottom: -4px;
 }
+// .responsive{
+//   .slick-slide{
+//     margin-left: 0px !important;
+//     margin-top: 10px;
+//   }
+// }
 }
