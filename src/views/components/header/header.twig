@@ -9,41 +9,36 @@
 	{# Top Nav #}
 
 	{# Main Nav #}
-		<div id="mainnav" class="main-nav-container shadow-default bg-white header"> <div class="row" style="justify-content: space-between;    align-items: end;">
-			<div class="logo col-6">
-				<div class="row">
-					<p style="margin-left:10px" id="modal" class="">
-						<img src="{{asset("/images/3.png")}}">
-					</p>
+		<div id="mainnav" class="main-nav-container shadow-default bg-white header " style="align-items: baseline;"> <div class="row">
+			<p style="" id="modal" class="">
+				<img src="{{asset("/images/3.png")}}">
+			</p>
+			<a href=""><img src="{{asset("/images/logo.png")}}"></a>
+		</div>
+		<div class="row headerContent" style="align-items: baseline;">
 
-					<a href="{{url('/')}}"><img src="{{asset("/images/logo.png")}}"></a>
-					<div class="headerContent col-6">
-						<a href="" class="mr-4">تسجيل الدخول</a>
-						<a href="" class="mr-4">حسابي</a>
-						<a href="" class="mr-4">قائمة الامنيات</a>
-					</div>
-				</div>
+			{% if user.type=='user' %}
+				<salla-user-menu avatar-only show-header></salla-user-menu>
+			{% else %}
+				<button
+					class="header-btn" onclick="salla.event.dispatch('login::open')">
+					{# <i class="header-btn__icon sicon-user-circle"></i> #}
+					تسجيل الدخول
+				</button>
+			{% endif %}
+			{% component 'header.menu' %}
 
-			</div>
-			<div class="search col-3" style="">
-				<salla-search inline="true" height=""></salla-search>
+		</div>
+		<div class="search " style="">
+			<salla-search inline="true" height=""></salla-search>
 
-			</div>
-			<div
-				class="">
-				{# <a href="{{url("/cart")}}" style="text-decoration:none">
-																	<div
-																		class="shopping-cart-icon">
-																		<i class="fa-solid fa-cart-shopping shopping-cart"></i>
-																		<span class="button__badge">4</span>
-												
-																	</div>
-																</a> #}
-				<div class="shopping-cart-icon">
-					<salla-cart-summary>
-						<i slot="icon" class="fa-solid fa-cart-shopping shopping-cart"></i>
-					</salla-cart-summary>
-				</div>
+		</div>
+
+		<div class="">
+			<div class="shopping-cart-icon">
+				<salla-cart-summary>
+					<i slot="icon" class="fa-solid fa-cart-shopping shopping-cart"></i>
+				</salla-cart-summary>
 			</div>
 		</div>
 	</div>

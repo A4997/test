@@ -509,7 +509,6 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .mr-1{margin-right:0.25rem}
 .mr-2{margin-right:0.5rem}
 .mr-3{margin-right:0.75rem}
-.mr-4{margin-right:1rem}
 .mr-5{margin-right:1.25rem}
 .mt-0{margin-top:0px}
 .mt-0\.5{margin-top:0.125rem}
@@ -5991,28 +5990,26 @@ body {
   /* overflow-y: hidden; */
 }
 .header {
-  padding: 20px;
+  display: flex !important;
+}
+.header {
+  padding: 0px 20px;
+  justify-content: space-between;
 }
 .header a,
-input {
+.header input {
   color: black;
   /* font-family: HomeFont; */
 }
-.headerContent {
+.header a:hover {
+  color: black !important;
+}
+.header .headerContent {
   font-size: 13px;
   font-weight: 300;
 }
-.icon {
-  background-color: #bbbbbb;
-  color: white;
-  display: flex;
-  padding: 10px;
-  border-radius: 50%;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  z-index: 1;
-  font-size: 10px;
+.header button {
+  font-weight: bold;
 }
 .header input {
   border: none;
@@ -6027,6 +6024,18 @@ input {
 }
 .header input::placeholder {
   margin-right: 20px;
+}
+.icon {
+  background-color: #bbbbbb;
+  color: white;
+  display: flex;
+  padding: 10px;
+  border-radius: 50%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  font-size: 10px;
 }
 .shopping-cart-icon {
   height: 80%;
@@ -6602,7 +6611,7 @@ input {
     margin-right: 86px;
   }
   .header {
-    display: none;
+    display: none !important;
   }
   .headerResponsive {
     display: block;
@@ -6751,16 +6760,32 @@ input {
     height: 50px;
     margin-bottom: 5px;
   }
-  .responsive .slick-slide {
-    margin-left: 220px !important;
+  .responsive .slick-list {
+    margin-left: -27px;
   }
   .responsive .slick-slide {
+    margin-left: 170px !important;
+  }
+  .responsive .slick-slide {
+    margin-top: 10px;
+  }
+  .responsiveSlider .slick-list {
+    margin-left: -27px;
+  }
+  .responsiveSlider .slick-slide {
+    margin-left: 170px !important;
+  }
+  .responsiveSlider .slick-slide {
     margin-top: 10px;
   }
 }
 @media only screen and (min-width: 550px) {
   .header {
-    display: block;
+    display: block !important;
+  }
+  .header {
+    justify-content: space-between;
+    padding-top: 10px;
   }
   .headerResponsive {
     display: none;
@@ -6795,7 +6820,7 @@ input {
     height: 350px;
   }
   .prodImage {
-    width: 160px;
+    width: 180px;
     height: 300px;
   }
   .prodImage img {
@@ -6859,6 +6884,18 @@ input {
   .first {
     margin-left: 50px;
     margin-bottom: -4px;
+  }
+  .responsiveSlider .slick-slide {
+    margin-left: 0px !important;
+  }
+  .responsiveSlider .slick-slide {
+    margin-top: 10px;
+  }
+  .responsiveSlider .slick-list {
+    margin-left: -27px;
+  }
+  .card-body {
+    width: 200px;
   }
 }
 .first\:rounded-t-md:first-child{border-top-left-radius:0.375rem;border-top-right-radius:0.375rem}
