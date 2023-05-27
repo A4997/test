@@ -6781,7 +6781,7 @@ body {
 }
 @media only screen and (min-width: 550px) {
   .header {
-    display: block !important;
+    display: flex !important;
   }
   .header {
     justify-content: space-between;

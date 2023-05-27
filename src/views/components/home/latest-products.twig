@@ -30,7 +30,7 @@
 								{% endif %}
 							{% endfor %}
 							<div class="card-body">
-								<h5 class="card-title">عطر لا بانثير من كارتييه للنساء او دي بارفيوم</h5>
+								<h5 class="card-title">{{product.name}}</h5>
 								<div class="rating_and_discount row">
 									<div class="discount ">-
 										{{product.discount_percentage|number_format }}
@@ -55,12 +55,22 @@
 							</div>
 
 							<div class="container topBadge" style="">
-								<div class="row" style="justify-content: space-evenly" id="newInfo">
-									<div class="newBadge ml-5 ">جديد</div>
-									<div class="favourite mr-5">
-										<i class="fa-regular fa-heart"></i>
-									</div>
-								</div>
+																		{% if product.promotion_title =="جديد" %}
+
+										<div class="row" style="justify-content: space-evenly" id="newInfo">
+													<div class="newBadge ml-5 ">{{product.promotion_title}}</div>
+
+													<div class="favourite mr-5">
+														<i class="fa-regular fa-heart"></i>
+													</div>
+												</div>
+                        {% else %}
+                        <div class="row" style="justify-content: end" id="newInfo">
+													<div class="favourite mr-5">
+														<i class="fa-regular fa-heart"></i>
+													</div>
+												</div>
+                      {% endif %}
 							</div>
 						</div>
 					</a>

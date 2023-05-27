@@ -888,7 +888,7 @@ body {
 }
 @media only screen and (min-width: 550px) {
   .header {
-    display: block !important;
+    display: flex !important;
     justify-content: space-between;
     padding-top: 10px;
   }
